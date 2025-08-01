@@ -1,0 +1,236 @@
+body {
+    background-color: #0e1117;
+    color: #d0d8e4;
+    font-family: monospace;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.container {
+    width: 1000px;
+    max-width: 100%;
+    padding: 0 20px;
+    overflow-x: visible;
+    position: relative;
+    margin-right: 620px;
+}
+
+h2 {
+    font-size: 1rem;
+    color: #66aaff;
+    margin: 1.5em 0 0.5em;
+}
+
+table {
+    white-space: nowrap;
+    table-layout: auto;
+    width: auto;
+    min-width: 100%;
+    border-collapse: collapse;
+    overflow-x: visible;
+}
+
+th,
+td {
+    border-right: 1px solid #2a2f3a;
+    padding: 6px 8px;
+    text-align: left;
+    vertical-align: top;
+    color: #c9d1d9;
+    white-space: nowrap;
+    overflow-x: visible;
+    border-bottom: 1px solid #2a2f3a;
+}
+
+th:last-child,
+td:last-child {
+    border-right: none;
+}
+
+th {
+    background-color: #1f2630;
+    color: #91c4ff;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #1a1f27;
+}
+
+tr:nth-child(odd) {
+    background-color: #151a20;
+}
+
+strong {
+    color: #69c0ff;
+}
+
+.sidebar {
+    width: 580px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: #1a1f27;
+    border: 1px solid #2a2f3a;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: monospace;
+    color: #d0d8e4;
+
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    transform: translateX(120%);
+    transition: transform 0.4s ease; /* smooth transition here */
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 10px;
+}
+
+.sidebar h2 {
+    grid-column: 1 / -1;
+    font-size: 1.2rem;
+    margin-bottom: 1em;
+    text-align: center;
+    color: #66aaff;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+#sidebarToggle {
+    position: fixed;
+    top:20px;
+    right: 0;
+    transform: translateY(-50%);
+    background: #0078d7;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px 0 0 4px;
+    z-index: 1100;
+    font-weight: bold;
+}
+
+.link-item {
+    display: flex;
+    align-items: center;
+    background-color: #151a20;
+    border-radius: 6px;
+    padding: 6px 8px;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.link-item:hover {
+    background-color: #223355;
+}
+
+.link-item img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.link-name {
+    flex-grow: 1;
+    font-size: 0.85rem;
+    color: #91c4ff;
+    user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.link-button {
+    background-color: #66aaff;
+    border: none;
+    color: #0e1117;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    user-select: none;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.link-button:hover {
+    background-color: #4a8dd6;
+}
+
+.toggle-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.toggle-content.expanded {
+    overflow: visible;
+    max-height: none;
+}
+
+.toggle-header {
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-header .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.toggle-header.expanded .arrow {
+    transform: rotate(90deg);
+}
+
+.routine-section {
+    background-color: #1a1f27;
+    border: 1px solid #2a2f3a;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-top: 2em;
+    color: #d0d8e4;
+    font-family: monospace;
+}
+
+.routine-section h2 {
+    font-size: 1rem;
+    color: #66aaff;
+    margin-top: 0;
+    cursor: pointer;
+}
+
+.routine-section ol {
+    padding-left: 1.5em;
+    margin: 1em 0 0;
+}
+
+.routine-section li {
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
+
+.routine-section a {
+    color: #69c0ff;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+.routine-section a:hover {
+    color: #91c4ff;
+}
