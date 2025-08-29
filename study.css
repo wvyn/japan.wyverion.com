@@ -28,7 +28,7 @@ table {
     white-space: nowrap;
     table-layout: auto;
     width: auto;
-    min-width: 100%;
+    min-width: 30%;
     border-collapse: collapse;
     overflow-x: visible;
 }
@@ -233,4 +233,17 @@ strong {
 
 .routine-section a:hover {
     color: #91c4ff;
+}
+
+.kana-charts {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.kana-chart {
+  flex: 1;
+  min-width: 300px;
 }
